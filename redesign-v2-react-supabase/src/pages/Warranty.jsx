@@ -19,7 +19,7 @@ export default function Warranty() {
       </GlassCard>
 
       <GlassCard className="p-5 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase mb-3">PLANNED FEATURES</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase mb-3">PLANNED FEATURES</h3>
         <ul className="space-y-2 text-[12px] text-text-secondary leading-relaxed">
           <li className="flex items-start gap-2"><span className="text-pink-400 mt-0.5">•</span> Serial to vendor warranty lookup</li>
           <li className="flex items-start gap-2"><span className="text-pink-400 mt-0.5">•</span> Coverage period & terms</li>

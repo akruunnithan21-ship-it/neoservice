@@ -91,7 +91,7 @@ export default function Rack() {
       {/* Add new item form */}
       {showAdd && (
         <GlassCard className="p-5 space-y-3 animate-fade-up">
-          <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">ADD RACK ITEM</h3>
+          <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">ADD RACK ITEM</h3>
           <Input label="Description" value={newItem.description} onChange={e => setNewItem(p => ({ ...p, description: e.target.value }))} placeholder="e.g. Corsair RM850 PSU" />
           <div className="grid grid-cols-2 gap-3">
             <Input label="Serial" value={newItem.serial} onChange={e => setNewItem(p => ({ ...p, serial: e.target.value }))} placeholder="Serial/tag" />
@@ -105,7 +105,7 @@ export default function Rack() {
       {/* Edit overlay */}
       {editItem && (
         <GlassCard className="p-5 space-y-3 animate-fade-up">
-          <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">EDIT ITEM</h3>
+          <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">EDIT ITEM</h3>
           <Input label="Description" value={editItem.description || ''} onChange={e => setEditItem(p => ({ ...p, description: e.target.value }))} />
           <div className="grid grid-cols-2 gap-3">
             <Input label="Serial" value={editItem.serial || ''} onChange={e => setEditItem(p => ({ ...p, serial: e.target.value }))} />

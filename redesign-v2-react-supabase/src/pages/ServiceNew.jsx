@@ -182,7 +182,7 @@ export default function ServiceNew() {
 
       {/* Customer Info */}
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Customer Info</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Customer Info</h3>
         <Input label="Customer Name" value={form.customer_name} onChange={e => update('customer_name', e.target.value)} placeholder="Full name" />
         <div className="flex gap-3">
           <button type="button" onClick={() => update('customer_type', 'existing')}
@@ -203,7 +203,7 @@ export default function ServiceNew() {
 
       {/* Assignment */}
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Assignment</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Assignment</h3>
         <Select
           label="Assigned Service Engineer"
           options={[...engineers, { value: '__add_custom__', label: '+ Add Service Engineer' }]}
@@ -221,7 +221,7 @@ export default function ServiceNew() {
 
       {/* Purchase Info */}
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Purchase Info</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Purchase Info</h3>
         <Input label="Invoice Bill No." value={form.invoice_bill_no} onChange={e => update('invoice_bill_no', e.target.value)} placeholder="If purchased from us, else leave empty" help="Leave empty if not applicable" />
         <Input
           label="Date of Purchase"
@@ -236,7 +236,7 @@ export default function ServiceNew() {
 
       {/* Product Details */}
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Product Details</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Product Details</h3>
         <Select label="Type of Product" options={PRODUCT_TYPES} value={form.product_type} onChange={v => update('product_type', v)} placeholder="Select product type" />
         <Input label="Model" value={form.model} onChange={e => update('model', e.target.value)} placeholder="Product model name" />
         <Input label="Serial Number" value={form.serial_number} onChange={e => update('serial_number', e.target.value)} placeholder="Serial / tag number" />
@@ -244,7 +244,7 @@ export default function ServiceNew() {
 
         {/* OS - Radio buttons */}
         <div className="space-y-1.5">
-          <label className="text-[11px] tracking-[2px] font-medium text-text-secondary uppercase">OS</label>
+          <label className="text-[12px] tracking-[2px] font-bold text-text-primary uppercase">OS</label>
           <div className="flex flex-wrap gap-2">
             {OS_OPTIONS.map(os => (
               <button
@@ -265,7 +265,7 @@ export default function ServiceNew() {
 
       {/* Service Info */}
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Service Info</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Service Info</h3>
         <Select label="Service Type" options={SERVICE_TYPES} value={form.service_type} onChange={v => update('service_type', v)} placeholder="Select service type" />
         {form.service_type === 'RMA' && (
           <p className="text-[10px] text-pink-500 bg-pink-50 border border-pink-200 rounded-xl px-3 py-2">
@@ -286,11 +286,11 @@ export default function ServiceNew() {
 
       {/* Status & Items */}
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Status & Items</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Status & Items</h3>
 
         {/* Call Status - Radio */}
         <div className="space-y-1.5">
-          <label className="text-[11px] tracking-[2px] font-medium text-text-secondary uppercase">Call Status</label>
+          <label className="text-[12px] tracking-[2px] font-bold text-text-primary uppercase">Call Status</label>
           <div className="flex flex-wrap gap-2">
             {CALL_STATUSES.map(s => (
               <button
@@ -315,7 +315,7 @@ export default function ServiceNew() {
 
         {/* Photo upload for condition */}
         <div className="space-y-1.5">
-          <label className="text-[11px] tracking-[2px] font-medium text-text-secondary uppercase">Condition Photos</label>
+          <label className="text-[12px] tracking-[2px] font-bold text-text-primary uppercase">Condition Photos</label>
           <label className="cursor-pointer block">
             <input type="file" accept="image/*" capture="environment" className="hidden" onChange={() => showToast('Photo upload available after ticket creation', 'info')} />
             <span className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-white/40 border border-black/10 text-[12px] tracking-wider text-pink-500 font-medium hover:bg-white/60 transition-all w-full justify-center">

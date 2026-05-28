@@ -106,7 +106,7 @@ export default function ServiceDetail() {
 
       {/* Customer Info */}
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Customer Info</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Customer Info</h3>
         <Input label="Customer Name" value={form.customer_name || ''} onChange={e => update('customer_name', e.target.value)} placeholder="Full name" />
         <div className="grid grid-cols-2 gap-3">
           <Input label="Phone" type="tel" value={form.phone || ''} onChange={e => update('phone', e.target.value)} placeholder="+91..." />
@@ -117,7 +117,7 @@ export default function ServiceDetail() {
 
       {/* Assignment */}
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Assignment</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Assignment</h3>
         <Select label="Assigned Service Engineer" options={engineers} value={form.assigned_engineer} onChange={v => {
           if (v !== form.assigned_engineer && form.assigned_engineer) {
             const history = form.assignment_history ? [...form.assignment_history] : []
@@ -141,7 +141,7 @@ export default function ServiceDetail() {
 
       {/* Purchase Info */}
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Purchase Info</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Purchase Info</h3>
         <Input label="Invoice Bill No." value={form.invoice_bill_no || ''} onChange={e => update('invoice_bill_no', e.target.value)} placeholder="If purchased from us" />
         <Input label="Date of Purchase" type="date" value={form.date_of_purchase || ''} onChange={e => update('date_of_purchase', e.target.value)} disabled={!invoiceEntered} className={!invoiceEntered ? 'opacity-40 pointer-events-none' : ''} />
         <Input label="Received Date" type="date" value={form.received_date || ''} onChange={e => update('received_date', e.target.value)} />
@@ -149,13 +149,13 @@ export default function ServiceDetail() {
 
       {/* Product Details */}
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Product Details</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Product Details</h3>
         <Select label="Type of Product" options={PRODUCT_TYPES} value={form.product_type} onChange={v => update('product_type', v)} placeholder="Select" />
         <Input label="Model" value={form.model || ''} onChange={e => update('model', e.target.value)} placeholder="Product model" />
         <Input label="Serial Number" value={form.serial_number || ''} onChange={e => update('serial_number', e.target.value)} placeholder="Serial / tag" />
         <TextArea label="System Configuration" value={form.system_config || ''} onChange={e => update('system_config', e.target.value)} placeholder="CPU, RAM, Storage, GPU..." />
         <div className="space-y-1.5">
-          <label className="text-[11px] tracking-[2px] font-medium text-text-secondary uppercase">OS</label>
+          <label className="text-[12px] tracking-[2px] font-bold text-text-primary uppercase">OS</label>
           <div className="flex flex-wrap gap-2">
             {OS_OPTIONS.map(os => (
               <button key={os} type="button" onClick={() => update('os', os)} className={`px-3 py-2 rounded-full text-[11px] tracking-wider font-medium border transition-all ${form.os === os ? 'bg-pink-500 text-white border-pink-500' : 'bg-white/80 text-text-primary border-black/10 hover:border-pink-200'}`}>{os}</button>
@@ -166,7 +166,7 @@ export default function ServiceDetail() {
 
       {/* Service Info */}
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Service Info</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Service Info</h3>
         <Select label="Service Type" options={SERVICE_TYPES} value={form.service_type} onChange={v => update('service_type', v)} placeholder="Select" />
         <div className="space-y-1.5">
           <TextArea label="Cabinet Details" value={form.cabinet_details || ''} onChange={e => update('cabinet_details', e.target.value)} placeholder="Cabinet model (optional)" />
@@ -178,9 +178,9 @@ export default function ServiceDetail() {
 
       {/* Status & Items */}
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Status & Items</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Status & Items</h3>
         <div className="space-y-1.5">
-          <label className="text-[11px] tracking-[2px] font-medium text-text-secondary uppercase">Call Status</label>
+          <label className="text-[12px] tracking-[2px] font-bold text-text-primary uppercase">Call Status</label>
           <div className="flex flex-wrap gap-2">
             {CALL_STATUSES.map(s => (
               <button key={s} type="button" onClick={() => handleStatusChange(s)} className={`px-3 py-2 rounded-full text-[11px] tracking-wider font-medium border transition-all ${form.call_status === s ? 'bg-pink-500 text-white border-pink-500' : 'bg-white/80 text-text-primary border-black/10 hover:border-pink-200'}`}>{s}</button>

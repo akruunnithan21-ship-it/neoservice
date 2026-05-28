@@ -95,7 +95,7 @@ export default function Dashboard() {
           {/* Recent RMA */}
           <div className="animate-fade-up">
             <div className="flex items-center justify-between mb-3 px-1">
-              <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Recent RMA</h3>
+              <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Recent RMA</h3>
               <button onClick={() => navigate('/rma')} className="text-[10px] tracking-wider text-pink-500 font-medium flex items-center gap-1 hover:underline">VIEW ALL <ArrowRight size={12} /></button>
             </div>
             {tickets.slice(0, 6).length === 0 ? (

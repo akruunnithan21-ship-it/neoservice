@@ -93,23 +93,23 @@ export default function OnsiteDetail() {
       </div>
 
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Customer Info</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Customer Info</h3>
         <Input label="Customer Name" value={form.customer_name || ''} onChange={e => update('customer_name', e.target.value)} placeholder="Full name" />
         <Input label="Phone" type="tel" value={form.phone || ''} onChange={e => update('phone', e.target.value)} placeholder="+91..." />
       </GlassCard>
 
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Visit Details</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Visit Details</h3>
         <Input label="Date & Time" type="datetime-local" value={form.date_time || ''} onChange={e => update('date_time', e.target.value)} />
         <Input label="Location" value={form.location || ''} onChange={e => update('location', e.target.value)} placeholder="Customer address / location" />
         <TextArea label="Customer Complaint / Issues" value={form.complaint || ''} onChange={e => update('complaint', e.target.value)} placeholder="Describe the issue" />
       </GlassCard>
 
       <GlassCard className="p-5 space-y-4 animate-fade-up">
-        <h3 className="text-[11px] tracking-[3px] font-semibold text-text-secondary uppercase">Assignment</h3>
+        <h3 className="text-[13px] tracking-[2.5px] font-bold text-text-primary uppercase">Assignment</h3>
         <Select label="Assign Technician" options={engineers} value={form.technician} onChange={v => update('technician', v)} placeholder="Select technician" />
         <div className="space-y-1.5">
-          <label className="text-[11px] tracking-[2px] font-medium text-text-secondary uppercase">Status</label>
+          <label className="text-[12px] tracking-[2px] font-bold text-text-primary uppercase">Status</label>
           <div className="flex flex-wrap gap-2">
             {STATUSES.map(s => (
               <button key={s} type="button" onClick={() => update('status', s)}
