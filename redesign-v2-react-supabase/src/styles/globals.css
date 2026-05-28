@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+/* =========================================================
+   NEO TOKYO — Soft Futuristic Glassmorphism Design System
+   ========================================================= */
+
+/* TRT Fluke Demo — headings/titles font */
+@font-face {
+  font-family: 'TRT Fluke Demo';
+  src: url('/fonts/TRTFlukeDemo-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TRT Fluke Demo';
+  src: url('/fonts/TRTFlukeDemo-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TRT Fluke Demo';
+  src: url('/fonts/TRTFlukeDemo-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@theme {
+  --color-bg-base: #FAF7F9;
+  --color-bg-soft: #FFFDFE;
+  --color-bg-card: rgba(255, 255, 255, 0.72);
+  --color-bg-card-solid: #FFFFFF;
+
+  --color-pink-500: #E70146;
+  --color-pink-400: #FF4F8B;
+  --color-pink-300: #FF6CA5;
+  --color-pink-200: #F9B5CC;
+  --color-pink-100: #FDE8F0;
+  --color-pink-50: #FFF5F8;
+
+  --color-ice-500: #4BC5FF;
+  --color-ice-400: #8DE3FF;
+  --color-ice-300: #BCEEFF;
+  --color-ice-200: #DDF5FF;
+  --color-ice-100: #F0FAFF;
+
+  --color-text-primary: #1D1D1F;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #6B7280;
+
+  --color-border: rgba(255, 255, 255, 0.9);
+  --color-border-subtle: rgba(0, 0, 0, 0.06);
+
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  --shadow-card-hover: 0 16px 48px rgba(0, 0, 0, 0.10), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  --shadow-glow: 0 0 40px rgba(255, 120, 180, 0.12);
+
+  --radius-card: 28px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --radius-pill: 999px;
+
+  --blur-card: 16px;
+  --blur-strong: 24px;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'TRT Fluke Demo', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background: var(--color-bg-base);
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode body */
+html.dark body {
+  background: #0a0a12;
+  color: #f0f0f4;
+}
+
+/* Background layers — gradient blobs + grid */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 800px 600px at 15% 10%, rgba(255, 79, 139, 0.12), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 85% 20%, rgba(77, 197, 255, 0.10), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 50% 90%, rgba(255, 108, 165, 0.08), transparent 50%);
+  z-index: -2;
+  pointer-events: none;
+}
+
+html.dark body::before {
+  background:
+    radial-gradient(ellipse 800px 600px at 15% 10%, rgba(231,1,70,0.06), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 85% 20%, rgba(77,197,255,0.04), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 50% 90%, rgba(231,1,70,0.04), transparent 50%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at 50% 30%, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 50% 30%, black 40%, transparent 80%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+html.dark body::after {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(231, 1, 70, 0.15); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(231, 1, 70, 0.3); }
+
+/* Glass card — enhanced glass feel */
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-card);
+  backdrop-filter: blur(var(--blur-card)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--blur-card)) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+  transition: all 0.3s ease;
+  overflow: visible;
+  position: relative;
+}
+
+.glass-card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.10), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  transform: translateY(-2px);
+}
+
+.glass-card-static {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-card);
+  backdrop-filter: blur(var(--blur-card)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--blur-card)) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+  overflow: visible;
+  position: relative;
+}
+
+/* Dark mode glass cards */
+html.dark .glass-card,
+html.dark .glass-card-static {
+  background: rgba(18, 18, 28, 0.75);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+}
+
+html.dark .glass-card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-fade-up { animation: fadeUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.animate-fade-in { animation: fadeIn 0.3s ease both; }
+.animate-slide-up { animation: slideUp 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+/* Stagger children */
+.stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stagger > *:nth-child(2) { animation-delay: 60ms; }
+.stagger > *:nth-child(3) { animation-delay: 120ms; }
+.stagger > *:nth-child(4) { animation-delay: 180ms; }
+.stagger > *:nth-child(5) { animation-delay: 240ms; }
+.stagger > *:nth-child(6) { animation-delay: 300ms; }
+.stagger > *:nth-child(7) { animation-delay: 360ms; }
+.stagger > *:nth-child(8) { animation-delay: 420ms; }
+
+/* Dark mode text overrides */
+html.dark .text-text-primary { color: #f0f0f4 !important; }
+html.dark .text-text-secondary { color: #b0b0c0 !important; }
+html.dark .text-text-muted { color: #808090 !important; }
+
+/* Light mode — ensure all text is dark and readable */
+html:not(.dark) .text-text-primary { color: #1D1D1F !important; }
+html:not(.dark) .text-text-secondary { color: #4B5563 !important; }
+html:not(.dark) .text-text-muted { color: #6B7280 !important; }
+
+/* Dark mode form fields */
+html.dark input, html.dark textarea, html.dark select,
+html.dark button {
+  color: #f0f0f4;
+}
+html.dark input::placeholder, html.dark textarea::placeholder {
+  color: #606070;
+}
+
+/* Dark mode labels */
+html.dark label {
+  color: #b0b0c0 !important;
+}
