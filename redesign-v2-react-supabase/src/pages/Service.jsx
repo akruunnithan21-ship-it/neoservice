@@ -1,5 +1,5 @@
-import { useEffect, useState, useMemo } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useEffect, useState, useMemo, useCallback } from 'react'
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom'
 import { Plus, MapPin, Monitor, ArrowUpDown, Filter } from 'lucide-react'
 import GlassCard from '../components/ui/GlassCard'
 import SearchBar from '../components/ui/SearchBar'
@@ -32,8 +32,9 @@ export default function Service() {
   const [sortBy, setSortBy] = useState('newest')
   const [typeFilter, setTypeFilter] = useState('all')
   const statusFromUrl = searchParams.get('status')
+  const location = useLocation()
 
-  useEffect(() => { loadTickets() }, [])
+  useEffect(() => { loadTickets() }, [location.key])
 
   async function loadTickets() {
     setLoading(true)

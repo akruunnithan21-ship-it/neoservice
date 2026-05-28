@@ -58,6 +58,7 @@ export default function RemoteDetail() {
       await db.saveRemoteTicket(payload)
       vibrate('success')
       showToast('Ticket updated', 'success')
+      navigate('/service', { replace: true })
     } catch (err) {
       vibrate('error')
       showToast('Failed: ' + err.message, 'error')

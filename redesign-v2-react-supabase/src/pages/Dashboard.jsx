@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { Plus, ArrowRight } from 'lucide-react'
 import GlassCard from '../components/ui/GlassCard'
 import Button from '../components/ui/Button'
@@ -10,13 +10,14 @@ import * as db from '../lib/database'
 
 export default function Dashboard() {
   const navigate = useNavigate()
+  const location = useLocation()
   const { tickets, fetchTickets } = useTicketStore()
   const [quickSearch, setQuickSearch] = useState('')
   const [serviceTickets, setServiceTickets] = useState([])
   const [onsiteTickets, setOnsiteTickets] = useState([])
   const [remoteTickets, setRemoteTickets] = useState([])
 
-  useEffect(() => { fetchTickets(); loadServiceTickets() }, [])
+  useEffect(() => { fetchTickets(); loadServiceTickets() }, [location.key])
 
   async function loadServiceTickets() {
     try {

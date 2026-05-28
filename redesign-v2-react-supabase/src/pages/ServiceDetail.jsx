@@ -61,6 +61,7 @@ export default function ServiceDetail() {
       await db.saveServiceTicket(cleanedForm)
       vibrate('success')
       showToast('Ticket updated', 'success')
+      navigate('/service', { replace: true })
     } catch (err) {
       vibrate('error')
       showToast('Failed to save: ' + err.message, 'error')

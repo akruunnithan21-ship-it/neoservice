@@ -100,6 +100,7 @@ export default function RmaDetail() {
       }
       vibrate('success')
       showToast('Ticket updated', 'success')
+      navigate('/rma', { replace: true })
     } catch (err) {
       vibrate('error')
       showToast('Failed to save', 'error')
