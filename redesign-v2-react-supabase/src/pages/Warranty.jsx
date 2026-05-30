@@ -5,7 +5,7 @@ export default function Warranty() {
     <div className="space-y-6 pt-4">
       <GlassCard className="p-8 text-center animate-fade-up">
         <img
-          src="/assets/logo.svg"
+          src="/assets/nt-logo.png"
           alt="Neo Tokyo"
           className="w-20 h-20 mx-auto mb-4 drop-shadow-[0_0_20px_rgba(231,1,70,0.4)]"
         />
